@@ -612,11 +612,12 @@ for i in range(num_iter):
         print("Rescaling Image to (%d, %d)" % (img_WIDTH, img_HEIGHT))
         img = imresize(img, (img_WIDTH, img_HEIGHT), interp=args.rescale_method)
 
-    fname = result_prefix + '_at_iteration_%d.png' % (i + 1)
-    imsave(fname, img)
-    end_time = time.time()
-    print('Image saved as', fname)
-    print('Iteration %d completed in %ds' % (i + 1, end_time - start_time))
+    if i is num_iter-1:
+        fname = result_prefix
+        imsave(fname, img)
+        end_time = time.time()
+        print('Image saved as', fname)
+        print('Iteration %d completed in %ds' % (i + 1, end_time - start_time))
 
     if improvement_threshold is not 0.0:
         if improvement < improvement_threshold and improvement is not 0.0:
