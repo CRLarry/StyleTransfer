@@ -69,7 +69,7 @@ parser.add_argument("--total_variation_weight", dest="tv_weight", default=8.5e-5
 parser.add_argument("--num_iter", dest="num_iter", default=25, type=int,
                     help="Number of iterations")
 
-parser.add_argument("--model", default="vgg16", type=str,
+parser.add_argument("--model", default="vgg19", type=str,
                     help="Choices are 'vgg16' and 'vgg19'")
 
 parser.add_argument("--content_loss_type", default=0, type=int,
@@ -90,7 +90,7 @@ parser.add_argument("--content_layer", dest="content_layer", default="conv5_2", 
 parser.add_argument("--init_image", dest="init_image", default="content", type=str,
                     help="Initial image used to generate the final image. Options are 'content', 'noise', or 'gray'")
 
-parser.add_argument("--pool_type", dest="pool", default="max", type=str,
+parser.add_argument("--pool_type", dest="pool", default="ave", type=str,
                     help='Pooling type. Can be "ave" for average pooling or "max" for max pooling')
 
 parser.add_argument('--preserve_color', dest='color', default="False", type=str,
