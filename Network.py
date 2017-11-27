@@ -66,7 +66,7 @@ parser.add_argument("--style_scale", dest="style_scale", default=1.0, type=float
 parser.add_argument("--total_variation_weight", dest="tv_weight", default=8.5e-5, type=float,
                     help="Total Variation weight")
 
-parser.add_argument("--num_iter", dest="num_iter", default=25, type=int,
+parser.add_argument("--num_iter", dest="num_iter", default=50, type=int,
                     help="Number of iterations")
 
 parser.add_argument("--model", default="vgg19", type=str,
