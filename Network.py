@@ -66,7 +66,7 @@ parser.add_argument("--style_scale", dest="style_scale", default=1.0, type=float
 parser.add_argument("--total_variation_weight", dest="tv_weight", default=8.5e-5, type=float,
                     help="Total Variation weight")
 
-parser.add_argument("--num_iter", dest="num_iter", default=25, type=int,
+parser.add_argument("--num_iter", dest="num_iter", default=40, type=int,
                     help="Number of iterations")
 
 parser.add_argument("--model", default="vgg19", type=str,
@@ -93,7 +93,7 @@ parser.add_argument("--init_image", dest="init_image", default="content", type=s
 parser.add_argument("--pool_type", dest="pool", default="ave", type=str,
                     help='Pooling type. Can be "ave" for average pooling or "max" for max pooling')
 
-parser.add_argument('--preserve_color', dest='color', default="False", type=str,
+parser.add_argument('--preserve_color', dest='color', default="True", type=str,
                     help='Preserve original color in image')
 
 parser.add_argument('--min_improvement', default=0.0, type=float,
@@ -620,7 +620,7 @@ for i in range(num_iter):
         print('Iteration %d completed in %ds' % (i + 1, end_time - start_time))
 
     if improvement_threshold is not 0.0:
-        if improvement < improvement_threshold and improvement is not 0.0:
+        if improvement < improvement_threshold and improvement >  0:
             print("Improvement (%f) is less than improvement threshold (%f). Early stopping script." % (
                 improvement, improvement_threshold))
             exit()
