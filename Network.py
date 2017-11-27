@@ -66,7 +66,7 @@ parser.add_argument("--style_scale", dest="style_scale", default=1.0, type=float
 parser.add_argument("--total_variation_weight", dest="tv_weight", default=8.5e-5, type=float,
                     help="Total Variation weight")
 
-parser.add_argument("--num_iter", dest="num_iter", default=50, type=int,
+parser.add_argument("--num_iter", dest="num_iter", default=40, type=int,
                     help="Number of iterations")
 
 parser.add_argument("--model", default="vgg19", type=str,
@@ -96,7 +96,7 @@ parser.add_argument("--pool_type", dest="pool", default="ave", type=str,
 parser.add_argument('--preserve_color', dest='color', default="True", type=str,
                     help='Preserve original color in image')
 
-parser.add_argument('--min_improvement', default=0.005, type=float,
+parser.add_argument('--min_improvement', default=0.0, type=float,
                     help='Defines minimum improvement required to continue script')
 
 
